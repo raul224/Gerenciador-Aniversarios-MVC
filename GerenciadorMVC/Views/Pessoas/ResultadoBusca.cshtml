@@ -1,0 +1,37 @@
+﻿@model List<GerenciadorMVC.Models.Pessoa>
+@{
+    var listaResultado = Model;
+    ViewData["Title"] = "Buscar Pessoas";
+}
+<h1>@ViewData["Title"]</h1>
+<form action="/Pessoas/BuscarPost" method="post">
+    <label>
+        <input name="nome" type="text" />
+    </label>
+    <button type="submit">Buscar</button>
+</form>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Data de aniversário</th>
+            <th scope="col">-</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pessoa in listaResultado)
+        {
+            <tr>
+                <td>@pessoa.nome</td>
+                <td>@pessoa.sobreNome</td>
+                <td>@pessoa.aniversario</td>
+                <td>
+                    <a href="/Pessoas/Editar?id=@pessoa.id" class="btn btn-primary btg-lg active" role="button" aria-pressed="true">Editar</a>
+                    <a href="/Pessoas/Deletar?id=@pessoa.id" class="btn btn-danger btg-lg active" role="button" aria-pressed="true">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>     

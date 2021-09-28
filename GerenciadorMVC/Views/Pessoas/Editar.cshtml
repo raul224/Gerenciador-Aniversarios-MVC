@@ -1,0 +1,24 @@
+﻿@model GerenciadorMVC.Models.Pessoa
+@{
+    var Pessoa = Model;
+    ViewData["Title"] = "Editar Pessoas";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <form action="/Pessoas/Editar" method="post">
+        <label>Id:
+            <input type="text" name="id" value="@Pessoa.id" readonly/>
+        </label> <br />
+        <label>Nome:
+            <input type="text" name="nome" value="@Pessoa.nome"/>
+        </label> <br />
+        <label>Sobre nome:
+            <input type="text" name="sobreNome" value="@Pessoa.sobreNome"/>
+        </label><br />
+        <label>Data de aniversário:
+            <input type="datetime" name="aniversario" value="@Pessoa.aniversario"/>
+        </label><br />
+        <button class="btn btn-primary mb-3" type="submit">Salvar modificações</button>
+    </form>
+</div>

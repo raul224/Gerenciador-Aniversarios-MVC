@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar Pessoas";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="form-group">
+    <form action="/Pessoas/Registrar" method="post">
+        <label>
+            Nome:
+            <input name="nome" />
+        </label> <br />
+        <label>
+            Sobre nome:
+            <input name="sobreNome" />
+        </label> <br />
+        <label>
+            Data de aniversário:
+            <input type="date" name="aniversario" />
+        </label> <br />
+        <button class="btn btn-success mb-3" type="submit">Cadastrar</button>
+    </form>
+</div>

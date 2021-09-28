@@ -1,0 +1,24 @@
+﻿@model GerenciadorMVC.Models.Pessoa
+@{
+    var Pessoa = Model;
+    ViewData["Title"] = "Excluir Pessoas";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <form action="/Pessoas/Deletar" method="post">
+        <input type="hidden" name="id" value="@Pessoa.id" />
+        <br />
+        <label>
+            Nome: @Pessoa.nome
+        </label><br />
+        <label>
+            Sobre nome: @Pessoa.sobreNome
+        </label><br />
+        <label>
+            Data de aniversário:@Pessoa.aniversario
+        </label><br />
+        <button class="btn btn-danger mb-3" type="submit">Excluir</button>
+    </form>
+    <a href="/Pessoas/Listar">Voltar para lista</a>
+</div>

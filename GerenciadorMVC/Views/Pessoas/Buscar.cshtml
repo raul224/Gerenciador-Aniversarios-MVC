@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Buscar Pessoas";
+}
+<h1>@ViewData["Title"]</h1>
+<form action="/Pessoas/BuscarPost" method="post">
+    <label>
+        <input name="nome" type="text" />
+    </label>
+    <button class="btn btn-primary mb-3" type="submit">Buscar</button>
+</form>
